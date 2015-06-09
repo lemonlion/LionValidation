@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1595DA46-E2B7-49A1-AFC4-61AF6C649DFA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LionValidation</RootNamespace>
+    <AssemblyName>LionValidation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dynamic.cs" />
+    <Compile Include="Enums\DateOf.cs" />
+    <Compile Include="Enums\AndOr.cs" />
+    <Compile Include="Enums\Operator.cs" />
+    <Compile Include="Enums\Bracket.cs" />
+    <Compile Include="Helpers\LambdaHelper.cs" />
+    <Compile Include="Helpers\RegexHelper.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\BracketWrapper.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\ContainsAllAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainAllAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\ContainsAttributes\DoesntContainFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanOrEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanOrEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanOrEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\OlderThanOrEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanOrEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateNotEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateNotEqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateNotEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateNotEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateNotEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanOrEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanOrEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\MoreRecentThanOrEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateEqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DateEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DobOlderThan21Attribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DobOlderThan16Attribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\DateAttributes\DobOlderThan18Attribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterOrLengthEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerOrLengthEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LengthEqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LengthEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LengthEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LengthEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerOrLengthEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerOrLengthEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\LongerOrLengthEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterOrLengthEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterOrLengthEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\LengthAttributes\ShorterOrLengthEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanOrEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanOrEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanOrEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanOrEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\LessThanOrEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyNotEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyNotEqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyNotEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyNotEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyNotEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyEqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\NumericallyEqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\PositiveIntAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\PositiveOrZeroIntAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\NegativeOrZeroIntAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\NegativeIntAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\DigitsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\URL.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\UKPostCode.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\UKDateStringAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\UKBankAccountNumberAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\MoneyStringAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\IntAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\RegexValidators\EmailAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfNotAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanOrEqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\EqualityAttributes\EqualToAllFieldsAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanOrEqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MagnitudeAttributes\GreaterThanOrEqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\BooleanAttributes\MustBeFalseAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\BooleanAttributes\MustBeTrueAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\EqualityAttributes\EqualToFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\EqualityAttributes\EqualToAnyFieldAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\EqualityAttributes\EqualToAnyAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\EqualityAttributes\EqualToAttribute.cs" />
+    <Compile Include="ValidationAttributes\MustBeValidators\MustBeAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllNotEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfLambdaAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyNotEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfNotEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllRegexNotMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyRegexNotMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfRegexNotMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllRegexMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyRegexMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfRegexMatchAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllEmptyAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfFalseAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllFalseAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyFalseAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAnyTrueAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAllTrueAttribute.cs" />
+    <Compile Include="Helpers\ExtensionMethods.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfAttribute.cs" />
+    <Compile Include="ValidationAttributes\RequiredIfValidators\RequiredIfTrueAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationStatement.cs" />
+    <Compile Include="Validator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\StandardPublish.pubxml" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.lion.js" />
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56767</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54680/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,52 @@
+﻿@using System.Web.UI.HtmlControls
+@model LionValidation.ManualTests.Models.BaseModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="~/Home/Index" method="POST">
+    <br />
+    @Html.LabelFor(x => x.TestField)
+    @Html.TextBoxFor(x => x.TestField)
+    @Html.ValidationMessageFor(x => x.TestField)
+
+    <br />
+    @Html.LabelFor(x => x.ValueToTest)
+    @Html.TextBoxFor(x => x.ValueToTest)
+    @Html.ValidationMessageFor(x => x.ValueToTest)
+
+    <br />
+    @Html.LabelFor(x => x.SecondValueToTest)
+    @Html.TextBoxFor(x => x.SecondValueToTest)
+    @Html.ValidationMessageFor(x => x.SecondValueToTest)
+
+    <br />
+    @Html.LabelFor(x => x.ThirdValueToTest)
+    @Html.TextBoxFor(x => x.ThirdValueToTest)
+    @Html.ValidationMessageFor(x => x.ThirdValueToTest)
+
+    <br />
+    @Html.LabelFor(x => x.FourthValueToTest)
+    @Html.TextBoxFor(x => x.FourthValueToTest)
+    @Html.ValidationMessageFor(x => x.FourthValueToTest)
+
+    <br />
+    @Html.LabelFor(x => x.FifthValueToTest)
+    @Html.TextBoxFor(x => x.FifthValueToTest)
+    @Html.ValidationMessageFor(x => x.FifthValueToTest)
+    
+    <br />
+    @Html.LabelFor(x => x.SixthValueToTest.ChildField1.GrandChildField1)
+    @Html.TextBoxFor(x => x.SixthValueToTest.ChildField1.GrandChildField1)
+    @Html.ValidationMessageFor(x => x.SixthValueToTest.ChildField1.GrandChildField1)
+    
+    <br />
+    @Html.LabelFor(x => x.SixthValueToTest.ChildField1.GrandChildField2)
+    @Html.TextBoxFor(x => x.SixthValueToTest.ChildField1.GrandChildField2)
+    @Html.ValidationMessageFor(x => x.SixthValueToTest.ChildField1.GrandChildField2)
+
+    <input type="submit" value="submit"/>
+</form>

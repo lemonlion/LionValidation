@@ -1,0 +1,7 @@
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\bin\Debug\LionValidation.UnitTests.dll
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\bin\Debug\LionValidation.UnitTests.pdb
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\bin\Debug\LionValidation.dll
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\bin\Debug\LionValidation.pdb
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\obj\Debug\LionValidation.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\obj\Debug\LionValidation.UnitTests.dll
+C:\Users\acitron\Documents\Visual Studio 2012\Projects\LionValidation\LionValidation.UnitTests\obj\Debug\LionValidation.UnitTests.pdb

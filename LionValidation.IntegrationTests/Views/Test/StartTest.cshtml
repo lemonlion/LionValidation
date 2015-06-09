@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Start Test";
+}
+
+@if (!Model.UseServerValidationOnly)
+{   
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<form method="POST" action="@Url.Action("StartTest")">
+    <h2>@Model.GetType().Name.Replace("Model", "").Replace("Tests", "") Test</h2>
+    
+    <input name="ModelTypeString" value="@Model.GetType().ToString()" type="hidden"/>
+    @Html.Hidden("UseServerValidationOnly")
+    <input type="text" id="IsFinishedValidating" name="IsFinishedValidating" value="@Model.IsFinishedValidating.ToString()"/>
+
+    <div id="firstFieldSection" class="fieldSection">
+        @Html.Label("FirstField")
+        @Html.TextBox("FirstField")
+        @Html.ValidationMessage("FirstField")
+    </div>
+
+    <div id="secondFieldSection" class="fieldSection">
+        @Html.Label("SecondField")
+        @Html.TextBox("SecondField")
+        @Html.ValidationMessage("SecondField")
+    </div>
+
+    <div id="thirdFieldSection" class="fieldSection">
+        @Html.Label("ThirdField")
+        @Html.TextBox("ThirdField")
+        @Html.ValidationMessage("ThirdField")
+    </div>
+
+    <div id="fourthFieldSection" class="fieldSection">
+        @Html.Label("FourthField")
+        @Html.TextBox("FourthField")
+        @Html.ValidationMessage("FourthField")
+    </div>
+
+    <div id="booleanOneFieldSection" class="fieldSection">
+        @Html.Label("BooleanOneField")
+        @Html.CheckBox("BooleanOneField")
+        @Html.ValidationMessage("BooleanOneField")
+    </div>
+
+    <div id="booleanTwoFieldSection" class="fieldSection">
+        @Html.Label("BooleanTwoField")
+        @Html.CheckBox("BooleanTwoField")
+        @Html.ValidationMessage("BooleanTwoField")
+    </div>
+    
+    <div id="intFieldSection" class="fieldSection">
+        @Html.Label("IntField")
+        @Html.TextBox("IntField")
+        @Html.ValidationMessage("IntField")
+    </div>
+    
+    <div id="grandChildfirstFieldSection" class="fieldSection">
+        @Html.Label("Child.ChildFirstField.GrandChildFirstField")
+        @Html.TextBox("Child.ChildFirstField.GrandChildFirstField")
+        @Html.ValidationMessage("Child.ChildFirstField.GrandChildFirstField")
+    </div>
+    
+    <div id="grandChildfirstFieldSection" class="fieldSection">
+        @Html.Label("Child.ChildFirstField.GrandChildSecondField")
+        @Html.TextBox("Child.ChildFirstField.GrandChildSecondField")
+        @Html.ValidationMessage("Child.ChildFirstField.GrandChildSecondField")
+    </div>
+
+    <input id="submitButton" type="submit" value="Submit Form" onclick="@(Model.UseServerValidationOnly ? Html.Raw("") : Html.Raw("$('form').valid(); $('#IsFinishedValidating').val('True'); return false;"))"  />
+</form>

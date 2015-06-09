@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{237E2C53-FCDA-4ED7-8D51-2F376AE5311F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LionValidation.IntegrationTests</RootNamespace>
+    <AssemblyName>LionValidation.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>M:\Apps\Selenium\Selenium Latest\selenium-dotnet-2.42.0\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>M:\Apps\Selenium\Selenium Latest\selenium-dotnet-2.42.0\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>M:\Apps\Selenium\Selenium Latest\selenium-dotnet-2.42.0\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>M:\Apps\Selenium\Selenium Latest\selenium-dotnet-2.42.0\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsAllTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsAnyTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\ContainsFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainAnyTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainAllTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\ContainsTestsModels\DoesntContainTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanRelativeDateEnumTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanRelativeDateStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanRelativeDateEnumTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanRelativeDateStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MustBeTrueTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MustBeFalseTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DobOlderThan21TestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DobOlderThan18TestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DobOlderThan16TestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanOrEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanOrEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanOrEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanOrEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\MoreRecentThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanOrEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanOrEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanOrEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanOrEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\OlderThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateEqualToAnyModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateEqualToModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateNotEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateNotEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateNotEqualToAnyModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateNotEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\DateTestsModels\DateNotEqualToModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyNotEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyNotEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyNotEqualToAnyModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyNotEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyNotEqualToModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterOrLengthEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerOrLengthEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterOrLengthEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterOrLengthEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterOrLengthEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\ShorterThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerOrLengthEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerOrLengthEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LongerOrLengthEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LengthEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LengthEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LengthEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\LengthTestsModels\LengthEqualToAnyTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyEqualToAnyModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\NumericallyEqualToModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanOrEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanOrEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanOrEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanOrEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\LessThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanOrEqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanOrEqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanOrEqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanOrEqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\MagnitudeTestsModels\GreaterThanAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\EqualityTestsModels\EqualToAllFieldsTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\EqualityTestsModels\EqualToAnyFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\EqualityTestsModels\EqualToAnyTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\EqualityTestsModels\EqualToFieldTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\EqualityTestsModels\EqualToTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\DigitsIntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\NegativeOrZeroIntStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\NegativeIntStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\IntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\NegativeIntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\NegativeOrZeroIntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\PositiveIntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\PositiveOrZeroIntTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\PositiveOrZeroIntStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\PositiveIntStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\MoneyStringAllowCommasTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\MoneyStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\IntStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\EmailTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\DigitsStringTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\UKDateTestsModel.cs" />
+    <Compile Include="Models\MustBeTestsModels\RegexTestsModels\UKDateStrictTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfNotTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyRegexNotMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyRegexMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllRegexNotMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllRegexMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfRegexNotMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfRegexMatchTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfLambdaGrandChildTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyTrueTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyFalseTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyNotEmptyTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAnyEmptyTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllFalseTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllTrueTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllNotEmptyTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfAllEmptyTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfFalseTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfTrueTestsModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfNotEmptyTestsModel.cs" />
+    <Compile Include="Models\TestsBaseModel.cs" />
+    <Compile Include="Models\RequiredIfTestsModels\RequiredIfEmptyTestsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsAllTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\ContainsAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainAllTests.cs" />
+    <Compile Include="Tests\MustBeTests\ContainsTests\DoesntContainTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanRelativeDateEnumTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanRelativeDateStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanRelativeDateEnumTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanRelativeDateStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\DobOlderThan21Tests.cs" />
+    <Compile Include="Tests\MustBeTests\DobOlderThan18Tests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanOrEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanOrEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanOrEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanOrEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\MoreRecentThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanOrEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanOrEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanOrEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanOrEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\OlderThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateEqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateNotEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateNotEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateNotEqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateNotEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\DateTests\DateNotEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\DobOlderThan16Tests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterOrLengthEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerOrLengthEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterOrLengthEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerOrLengthEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterOrLengthEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerOrLengthEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\ShorterOrLengthEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LongerOrLengthEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LengthEqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LengthEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LengthEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\LengthTests\LengthEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanOrEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanOrEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanOrEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\GreaterThanOrEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanOrEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanOrEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanOrEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanOrEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\LessThanTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyNotEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyNotEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyNotEqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyNotEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyNotEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyEqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyEqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyEqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyEqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\MagnitudeTests\NumericallyEqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\EqualToAllFieldsTests.cs" />
+    <Compile Include="Tests\MustBeTests\EqualToAnyFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\EqualToAnyTests.cs" />
+    <Compile Include="Tests\MustBeTests\EqualToFieldTests.cs" />
+    <Compile Include="Tests\MustBeTests\EqualToTests.cs" />
+    <Compile Include="Tests\MustBeTests\MustBeTrueTests.cs" />
+    <Compile Include="Tests\MustBeTests\MustBeFalseTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\DigitsIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\DigitsStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\IntStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\NegativeIntStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\NegativeOrZeroIntStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\PositiveIntStringTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\PositiveOrZeroStringIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\PositiveIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\PositiveOrZeroIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\NegativeOrZeroIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\NegativeIntTests.cs" />
+    <Compile Include="Tests\MustBeTests\RegexTests\IntTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfNotTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyRegexNotMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyRegexMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllRegexNotMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllRegexMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfRegexNotMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfRegexMatchTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfLambdaGrandChildTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyFalseTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyTrueTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyNotEmptyTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAnyEmptyTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllFalseTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllTrueTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllNotEmptyTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfAllEmptyTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfFalseTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfTrueTests.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfNotEmptyTests.cs" />
+    <Compile Include="Tests\TestsBase.cs" />
+    <Compile Include="Tests\RequiredIfTests\RequiredIfEmptyTests.cs" />
+    <Compile Include="TestExample.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.lion.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Test\StartTest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LionValidation\LionValidation.csproj">
+      <Project>{1595da46-e2b7-49a1-afc4-61af6c649dfa}</Project>
+      <Name>LionValidation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61302</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58755/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
